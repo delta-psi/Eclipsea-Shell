@@ -1,0 +1,61 @@
+
+# Order to build shit: 
+- Clock widget
+    - Hover: 
+        - Current date 
+        - Functional calendar (events, reminders, etc.)
+- Internet connection widget
+    - Ethernet & wifi 
+        - Hover: Shows current connection 
+        - On click: Toggle on/off 
+    - VPN connectivity widget/identifier 
+- Power button 
+    - Copy Caelestia shell: power button on bar and right side pop out menu for power options 
+- Colors from wallust (after matugen is replaced)
+- Opacity from hyprland 
+- Wallpaper selector 
+    - Copy caelestia shell 
+    - Add support for animated wallpapers (gifs, ... )
+    - Add support for SVG wallpapers 
+        - Make svg wallpapers use colors for transparent sections 
+            - Colors either from the wallpaper (if any), or choose a colorscheme for it 
+- App launcher 
+    - Copy caelestia shell 
+- Volume & brightness slide bars 
+    - Copy caelestia shell 
+- Hot corners: 
+    - Top right corner: 
+        - Notifications menu (with actual functionality)
+    - Bottom right corner: 
+        - Shortcuts/keybinds menu 
+            - Shell, Hyprland, Neovim, ...
+- Dashboard 
+    - Caelestia, but better 
+        - Weather widget from Noctalia (to get weather effects)
+    - Audio visualizer with equalizer control (like the one on reddit that I keep seeing)
+
+
+# To Do
+- Basically copy Caelestia shell, but with my personal flavor
+- Make quickshell toggle animation smoother
+- Fix top, bottom, and right side gaps when bar is toggled off 
+    - Add exclusion zones back to Top, Right, & Bottom, toggle when bar is toggled
+    - Remove exclusion zone on bar, and have Hyprland gaps_out 16, 16, 16, 66 (?)
+- More consistency with Hypr modes
+    - Toggle rounded corners with square & zen modes 
+- Add Special workspace 'layer' to workspaces indicators
+    - Fancy icons for each 
+        - Idle, clock, special/scratchpad, btop, music, communication, todo list, etc. 
+- Add some bar components
+    - Power 
+    - Date/Time
+        - Full calendar integration with ability to add events and such
+    - Network/Wifi
+    - Bluetooth
+- Dashboard
+    - Weather
+        - With current weather effects like Noctalia shell 
+    - Date & Time 
+    - Media 
+    - System usage/Performance
+
