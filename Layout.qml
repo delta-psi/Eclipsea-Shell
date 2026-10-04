@@ -7,5 +7,5 @@ QtObject {
     property int sideBarWidth: 7
     property int bottomBarHeight: 7
     property int cornerRadius: 30
-    property int mainBarWidth: 50
+    property int mainBarWidth: 45
 }

@@ -99,7 +99,9 @@ Variants {
                     id: bezelBackground
                     anchors.fill: parent
                     // color: Theme.surface
-                    color: "#1a1b26"
+                    // color: "#1a1b26"
+                    // color: Qt.rgba(0.1, 0.1, 0.12, 0.7)
+                    color: "#d910242d"
                     layer.enabled: true
 
                     // Subtracts the cutoutShape from the solid surface

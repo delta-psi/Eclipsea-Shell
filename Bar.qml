@@ -26,7 +26,7 @@ Variants {
       bottom: true
     }
 
-    implicitWidth: 50
+    implicitWidth: 45
     // color: "#1a1b26"
     color: "transparent"
 
@@ -56,6 +56,7 @@ Variants {
           font.pixelSize: 24
           font.family: "JetBrainsMono Nerd Font"
           color: "#7EB3E6"
+          // color: "transparent"
           Layout.alignment: Qt.AlignHCenter 
         }
         Rectangle {
@@ -64,7 +65,9 @@ Variants {
           implicitWidth: 34
           implicitHeight: workspaceColumn.implicitHeight + 16
           radius: width / 2 
-          color: "#16161e"
+          color: "#b316161e"
+          // color: "#d910242d"
+          // color: "transparent"
           clip: true 
 
           Column {
