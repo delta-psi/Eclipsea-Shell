@@ -4,6 +4,7 @@ import Quickshell
 import Quickshell.Wayland
 import QtQuick
 import QtQuick.Effects
+import qs
 // import "../theme"
 
 /**
@@ -44,37 +45,8 @@ Variants {
             intersection: Intersection.Xor
         }
 
-        // property real scaleValue: root.bezelVisible ? 1.0 : 0.90
-        //
-        // Behavior on scaleValue {
-        //   NumberAnimation {
-        //     duration: 300 
-        //       easing.type: Easing.InOutQuad
-        //   }
-        // }
-        //
-        // Item {
-        //   id: contentItem
-        //   anchors.fill: parent
-          // opacity: root.bezelVisible ? 1.0 : 0.0
-          // Behavior on opacity {
-          //   NumberAnimation {
-          //     duration: 300
-          //     easing.type: Easing.InOutQuad
-          //   }
-          // }
-
-        //   transform: Scale {
-        //     origin.x: bezelWindow.width / 2 
-        //     origin.y: bezelWindow.height / 2 
-        //     xScale: bezelWindow.scaleValue 
-        //     yScale: bezelWindow.scaleValue
-        //   }
-        // }
-
         // --- Input & Visual Masking ---
         // XOR intersection ensures clicks pass through the center cutout
-
 
         Item {
             id: effectContainer
@@ -98,10 +70,9 @@ Variants {
                 Rectangle {
                     id: bezelBackground
                     anchors.fill: parent
-                    // color: Theme.surface
                     // color: "#1a1b26"
-                    // color: Qt.rgba(0.1, 0.1, 0.12, 0.7)
-                    color: "#d910242d"
+                    // color: "#d910242d"
+                    color: Style.shell
                     layer.enabled: true
 
                     // Subtracts the cutoutShape from the solid surface
@@ -130,13 +101,13 @@ Variants {
 
                         // Margins
                         anchors {
-                            leftMargin: Layout.mainBarWidth + 1
-                            rightMargin: Layout.sideBarWidth
-                            topMargin: Layout.topBarHeight
-                            bottomMargin: Layout.bottomBarHeight
+                            leftMargin: Style.mainBarWidth + 1
+                            rightMargin: Style.sideBarWidth
+                            topMargin: Style.topBarHeight
+                            bottomMargin: Style.bottomBarHeight
                         }
 
-                        radius: Layout.cornerRadius
+                        radius: Style.cornerRadius
                     }
                 }
             }

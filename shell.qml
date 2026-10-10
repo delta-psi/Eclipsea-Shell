@@ -2,6 +2,8 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 import qs
+import qs.App_Launcher
+// import "./App_Launcher/"
 
 ShellRoot {
   id: root 
@@ -26,6 +28,9 @@ ShellRoot {
     barVisible: true
   }
 
+  AppLauncher {
+    id: appLauncher
+  }
   // Newbar { 
   //   id: bar 
   //   barVisible: true
@@ -42,7 +47,7 @@ ShellRoot {
 
   IpcHandler {
     id: bezelsToggleHandler
-    target: desktopBezels
+    target: "desktopBezels"
 
     function bezelsToggle(): void {
       desktopBezels.bezelVisible = !desktopBezels.bezelVisible
@@ -65,7 +70,7 @@ ShellRoot {
     target: "layout"
 
     function toggleSquareMode(): void {
-      Layout.cornerRadius = Layout.cornerRadius > 0 ? 0 : 30
+      Style.cornerRadius = Style.cornerRadius > 0 ? 0 : 30
     }
   }
 }

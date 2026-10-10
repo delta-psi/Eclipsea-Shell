@@ -1,10 +1,11 @@
-
+// pragma ComponentBehavior: Bound
 import Quickshell
 import Quickshell.Wayland
 import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
 import Quickshell.Io
+import qs.Theme
 
 Variants {
   id: root 
@@ -55,7 +56,9 @@ Variants {
           text: ""
           font.pixelSize: 24
           font.family: "JetBrainsMono Nerd Font"
-          color: "#7EB3E6"
+          color: Style.accent
+          // color: "#7EB3E6"
+          // color: Layout.accent
           // color: "transparent"
           Layout.alignment: Qt.AlignHCenter 
         }
@@ -65,7 +68,7 @@ Variants {
           implicitWidth: 34
           implicitHeight: workspaceColumn.implicitHeight + 16
           radius: width / 2 
-          color: "#b316161e"
+          color: Style.shellRaised          // color: "#b316161e"
           // color: "#d910242d"
           // color: "transparent"
           clip: true 
@@ -89,9 +92,10 @@ Variants {
                   width: 24 
                   height: 24 
                   radius: width / 2 
+                  color: Style.accent
                   // color: "transparent"
                   // color: parent.isActive ? "#0db9d7" : (ws ? "#7aa2f7" : "#444b6a")
-                  color: "#0db9d7"
+                  // color: "#0db9d7"
                   // border.color: "#0db9d7"
                   // border.width: 2 
                   visible: parent.isActive
@@ -99,15 +103,21 @@ Variants {
 
                 Text {
                   anchors.centerIn: parent 
-                  text: isActive ? "󰮯" : (ws ? "" : "" )
+                  text: parent.isActive ? "󰮯" : (parent.ws ? "" : "" )
                   // color: isActive ? "#0db9d7" : (ws ? "#7aa2f7" : "#444b6a") # #1a1b26
-                  color: isActive ? "#1a1b26" : (ws ? "#7aa2f7" : "#444b6a") 
+                  color: parent.isActive ? Style.surface : (parent.ws ? "#7aa2f7" : "#444b6a") 
+                  Behavior on color {
+                    ColorAnimation {
+                      duration: 500
+                      easing.type: Easing.OutCubic
+                    }
+                  }
                   font { pixelSize: 18; bold: true }
                 }
 
                 MouseArea {
                   anchors.fill: parent 
-                    onClicked: Hyprland.dispatch("workspace " + wsId)
+                    onClicked: Hyprland.dispatch("workspace " + parent.wsId)
                 }
               }
             }

@@ -29,7 +29,7 @@ Variants {
         }
 
         // --- Visual Styling ---
-        implicitWidth: Layout.sideBarWidth
+        implicitWidth: Style.sideBarWidth
         color: "transparent"
     }
 }

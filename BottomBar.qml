@@ -32,7 +32,7 @@ Variants {
         }
 
         // --- Visual Styling ---
-        implicitHeight: Layout.bottomBarHeight
+        implicitHeight: Style.bottomBarHeight
         color: "transparent"
     }
 }
